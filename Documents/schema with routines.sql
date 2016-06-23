@@ -206,7 +206,7 @@ set complete_id =  concat("1",id);
 
 if (not exists (select id from doctor as d where d.id = complete_id)) then
 
-insert into doctor values (complete_id, name, expertise, 0);
+insert into doctor values (id, name, expertise, 0);
 
 call grant_doctor_privileges(complete_id, password);
 
@@ -239,7 +239,7 @@ set complete_id = concat('2', id);
 
 if (not exists (select id from doctor as d where d.id = complete_id)) then
 
-insert into doctor values (complete_id, name, "darusazi", 1);
+insert into doctor values (id, name, "darusazi", 1);
 
 call grant_drugstore_keeper_privileges(complete_id, password);
 
@@ -452,4 +452,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-23 17:45:23
+-- Dump completed on 2016-06-23 18:06:18

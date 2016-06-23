@@ -55,6 +55,8 @@ set user = substring(user, 1, position('@' IN user));
 if (user like "3%") then
 	if (exists (select * from confidence where patient_id = user)) then
 		call error();
+	elseif (new.patient_id <> user) then
+		call error();
 	end if;
 elseif (user like "2%") then
 	call error();
@@ -206,7 +208,7 @@ set complete_id =  concat("1",id);
 
 if (not exists (select id from doctor as d where d.id = complete_id)) then
 
-insert into doctor values (id, name, expertise, 0);
+insert into doctor values (complete_id, name, expertise, 0);
 
 call grant_doctor_privileges(complete_id, password);
 
@@ -239,7 +241,7 @@ set complete_id = concat('2', id);
 
 if (not exists (select id from doctor as d where d.id = complete_id)) then
 
-insert into doctor values (id, name, "darusazi", 1);
+insert into doctor values (complete_id, name, "darusazi", 1);
 
 call grant_drugstore_keeper_privileges(complete_id, password);
 
@@ -272,7 +274,7 @@ set complete_id = concat("3", id);
 
 if (not exists (select id from patient as d where d.id = complete_id)) then
 
-insert into patient values (id, password, name, birthday, gender, basic_insurance, secondary_insurance, degree, job, city, history_privilege);
+insert into patient values (complete_id, password, name, birthday, gender, basic_insurance, secondary_insurance, degree, job, city, history_privilege);
 
 call grant_patient_privileges(complete_id, password);
 
@@ -452,4 +454,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-06-23 18:06:18
+-- Dump completed on 2016-06-23 18:25:55

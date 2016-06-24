@@ -1,5 +1,6 @@
-package healthNetwork;
+package healthNetwork.ui;
 
+import healthNetwork.Constants;
 import healthNetwork.GraphicHandler;
 import healthNetwork.customView.MyButton;
 import healthNetwork.customView.MyLabel;

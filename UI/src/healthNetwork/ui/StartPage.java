@@ -91,8 +91,11 @@ public class StartPage extends JFrame {
 
                     Connection conn = DriverManager.getConnection(
                             "jdbc:mysql://localhost/db_project",
-                            "root@localhost" , pass
+                            idField.getText() , pass
                     );
+
+                    setVisible(false);
+                    new Panel();
 
 //                    Statement statement = conn.createStatement();
 //                    ResultSet resultSet = statement.executeQuery("select * from job_distribution");
@@ -103,7 +106,6 @@ public class StartPage extends JFrame {
                     System.out.println("Error: unable to load driver class!");
                     System.exit(1);
                 } catch (SQLException e1) {
-                    e1.printStackTrace();
                     JOptionPane.showMessageDialog(StartPage.this,"No such User registered!");
                 }
 

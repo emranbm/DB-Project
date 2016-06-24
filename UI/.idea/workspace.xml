@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="Start page connects to database properly and works.">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" afterPath="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/ui/Panel.java" afterPath="$PROJECT_DIR$/src/healthNetwork/ui/Panel.java" />
     </list>
     <ignored path="UI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -843,7 +841,7 @@
       <workItem from="1466748986852" duration="941000" />
       <workItem from="1466750901157" duration="3000" />
       <workItem from="1466752377273" duration="7080000" />
-      <workItem from="1466768689734" duration="7669000" />
+      <workItem from="1466768689734" duration="8223000" />
     </task>
     <task id="LOCAL-00001" summary="sign up btn omits.">
       <created>1466761039841</created>
@@ -884,7 +882,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17358000" />
+    <option name="totallyTimeSpent" value="17912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />

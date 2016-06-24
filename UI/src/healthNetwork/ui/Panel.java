@@ -6,6 +6,8 @@ import healthNetwork.customView.*;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * This class shows start page for signing in or up! For this class supposed a imaginary layout rather than
@@ -64,6 +66,12 @@ public class Panel extends JFrame {
         sqlEditorPane = new MyPanel(Constants.blueBackJPGPath) ;
         sqlEditorPane.setSize(widthOfSqlEditorPanel , heightOfSqlEditorPanel);
         sqlEditorPane.setLocation(sqlEditorPanelX , sqlEditorPanelY);
+
+        JTextPane sqleditor = new JTextPane() ;
+        sqleditor.setSize(widthOfSqlEditorPanel * 19 / 20 , heightOfSqlEditorPanel * 19 / 20 );
+        sqleditor.setLocation( widthOfSqlEditorPanel * 1 / 40 , heightOfSqlEditorPanel * 1 / 40);
+
+        sqlEditorPane.add(sqleditor) ;
     }
 
     private void setOutputArea(){
@@ -112,6 +120,54 @@ public class Panel extends JFrame {
         toolBar.setLocation(toolBarX , toolBarY);
         toolBar.setSize(widthOfToolBar , heightOfToolBar);
 
+        JButton exit = new MyButton(Constants.exitJPGPath);
+        exit.setLocation(0,0);
+        exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
+        exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)));
+        exit.setBorder(BorderFactory.createEmptyBorder());
+        //exit.setBackground(Color.decode("#01aaeb"));
+        exit.setToolTipText("Exit");
+        exit.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                dispose();
+            }
+        });
+
+        JToolBar bar = new JToolBar();
+        bar.setLocation(widthOfToolBar / 60, heightOfToolBar/5);
+        bar.setSize(exit.getWidth() * 2, exit.getHeight()*2);
+        bar.setBorder(BorderFactory.createEmptyBorder());
+        bar.setFloatable(false);
+        bar.add(exit);
+
+        JButton exe = new MyButton();
+        exe.setLocation(0,0);
+        exe.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
+        exe.setIcon(new ImageIcon(getClass().getResource(Constants.executePNGPath)));
+        exe.setBorder(BorderFactory.createEmptyBorder());
+        //exit.setBackground(Color.decode("#01aaeb"));
+        exe.setToolTipText("execute");
+        exe.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                // TODO Auto-generated method stub
+                dispose();
+            }
+        });
+
+        JToolBar bar2 = new JToolBar();
+        bar2.setLocation(widthOfToolBar / 2, heightOfToolBar/5);
+        bar2.setSize(exe.getWidth() * 2, exe.getHeight()*2);
+        bar2.setBorder(BorderFactory.createEmptyBorder());
+        bar2.setFloatable(false);
+        bar2.add(exe);
+
+        toolBar.add(bar) ;
+        toolBar.add(bar2) ;
     }
 
 //    private void setToolBar() {

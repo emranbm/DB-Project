@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="sign up btn omits.">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/mysql-connector-java-5.1.39-bin.jar" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_39_bin.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="A start to login process using jdbc">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UI.iml" afterPath="$PROJECT_DIR$/UI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/StartPage.java" afterPath="$PROJECT_DIR$/src/healthNetwork/StartPage.java" />
     </list>
     <ignored path="UI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -30,30 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="StartPage.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/StartPage.java">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="362">
-              <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
+            <state relative-caret-position="242">
+              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1466766843742" expanded="true" signature="3636:3666" ph="select * fro... job_distribution" />
+                <element signature="e#194#195#0" expanded="true" />
+                <element signature="e#240#241#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GraphicHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
@@ -144,8 +130,8 @@
         <option value="$PROJECT_DIR$/src/customView/MyButton.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/customView/MyButton.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java" />
-        <option value="$PROJECT_DIR$/src/healthNetwork/Main.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/StartPage.java" />
+        <option value="$PROJECT_DIR$/src/healthNetwork/Main.java" />
       </list>
     </option>
   </component>
@@ -281,7 +267,14 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/StartPage.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/../.gitignore</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/Main.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/customView/MyPasswordField$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/customView/MyPasswordField$2.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/customView/MyPasswordField$3.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/customView/MyPasswordField.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/customView/MyPasswordField.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -289,6 +282,11 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/ui/Panel.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -296,6 +294,9 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="true" />
           <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/StartPage$1.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/StartPage.class</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/StartPage.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Restored" />
@@ -837,7 +838,7 @@
       <workItem from="1466746991564" duration="1665000" />
       <workItem from="1466748986852" duration="941000" />
       <workItem from="1466750901157" duration="3000" />
-      <workItem from="1466752377273" duration="6263000" />
+      <workItem from="1466752377273" duration="6506000" />
     </task>
     <task id="LOCAL-00001" summary="sign up btn omits.">
       <created>1466761039841</created>
@@ -846,11 +847,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466761039841</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="A start to login process using jdbc">
+      <created>1466767378468</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1466767378468</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8872000" />
+    <option name="totallyTimeSpent" value="9115000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -864,7 +872,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295583" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32842582" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -888,7 +896,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sign up btn omits." />
-    <option name="LAST_COMMIT_MESSAGE" value="sign up btn omits." />
+    <MESSAGE value="A start to login process using jdbc" />
+    <option name="LAST_COMMIT_MESSAGE" value="A start to login process using jdbc" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -903,10 +912,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1466766843742" expanded="true" signature="3636:3666" ph="select * fro... job_distribution" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -914,7 +920,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -980,10 +990,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="11" column="37" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1466766843742" expanded="true" signature="3636:3666" ph="select * fro... job_distribution" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -991,7 +998,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,14 +1072,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyPasswordField.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1119,22 +1122,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/StartPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
           <caret line="85" column="59" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1466766843742" expanded="true" signature="3636:3666" ph="select * fro... job_distribution" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#240#241#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

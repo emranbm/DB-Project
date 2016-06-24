@@ -75,27 +75,40 @@ public class StartPage extends JFrame {
         signInBtn = new MyButton("sign in", Constants.buttonJPGPath);
         signInBtn.setSize(passwordField.getWidth() / 2, heightOfMainPanel / 5);
         signInBtn.setLocation(widthOfMainPanel / 2 - signInBtn.getWidth() / 2, mainPanelY + heightOfMainPanel * 5 / 6);
-//        signInBtn.addActionListener(new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//
-//                try {
-//                    Class.forName("oracle.jdbc.driver.OracleDriver");
-//                    Connection conn = DriverManager.getConnection(
-//                            "jdbc:oracle:thin:@db.yale.edu:1521:univdb" ,
-//                            "root" , ""
-//                    );
-//                }
-//                catch(ClassNotFoundException ex) {
-//                    System.out.println("Error: unable to load driver class!");
-//                    System.exit(1);
-//                } catch (SQLException e1) {
-//                    e1.printStackTrace();
-//                }
-//
-//
-//            }
-//        });
+        signInBtn.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+
+                    String pass = null;
+                    if (passwordField.getPassword() != null) {
+                        pass = new String(passwordField.getPassword());
+                        System.out.println(pass);
+                    }
+
+                    Connection conn = DriverManager.getConnection(
+                            "jdbc:mysql://localhost/db_project",
+                            "root@localhost" , pass
+                    );
+
+//                    Statement statement = conn.createStatement();
+//                    ResultSet resultSet = statement.executeQuery("select * from job_distribution");
+//                    resultSet.next();
+//                    System.out.println(resultSet.getString("job"));
+                }
+                catch(ClassNotFoundException ex) {
+                    System.out.println("Error: unable to load driver class!");
+                    System.exit(1);
+                } catch (SQLException e1) {
+                    e1.printStackTrace();
+                    JOptionPane.showMessageDialog(StartPage.this,"No such User registered!");
+                }
+
+
+            }
+        });
     }
 
     private void initialize() {

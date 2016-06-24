@@ -10,6 +10,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.* ;  // for standard JDBC programs
+import java.math.* ;
 
 /**
  * This class shows start page for signing in or up! For this class supposed a imaginary layout rather than
@@ -18,63 +22,84 @@ import java.awt.event.ActionListener;
  */
 public class StartPage extends JFrame {
 
-    private int width = GraphicHandler.getInstance().getWidthScreen() / 4 ;
-    private int height = GraphicHandler.getInstance().getHeightScreen() / 3 ;
+    private int width = GraphicHandler.getInstance().getWidthScreen() / 4;
+    private int height = GraphicHandler.getInstance().getHeightScreen() / 3;
     private MyLabel titleLbl;
     private MyTextField idField;
-    private JPasswordField passwordField ;
+    private JPasswordField passwordField;
     private JButton signInBtn;
-    private JToolBar toolBar ;
+    private JToolBar toolBar;
 
     /**
      * Magnitude of imaginary layouts
      */
-    private final int heightOfTitleBar = height / 7 ;
-    private final int widthOfTitleBar = width ;
-    private final int titleBarX = 0 ;
-    private final int titleBarY = height / 15 ;
-    private final int titleFontSize = 35 ;
-    private final int mainPanelX = 0 ;
-    private final int mainPanelY = heightOfTitleBar ;
-    private final int heightOfMainPanel = height * 5 / 7 ;
-    private final int widthOfMainPanel = width ;
-    private final int toolBarX = 0 ;
-    private final int toolBarY = heightOfTitleBar + heightOfMainPanel ;
-    private final int heightOfToolBar = height - ( heightOfMainPanel + heightOfTitleBar ) ;
-    private final int widthOfToolBar = width ;
+    private final int heightOfTitleBar = height / 7;
+    private final int widthOfTitleBar = width;
+    private final int titleBarX = 0;
+    private final int titleBarY = height / 15;
+    private final int titleFontSize = 35;
+    private final int mainPanelX = 0;
+    private final int mainPanelY = heightOfTitleBar;
+    private final int heightOfMainPanel = height * 5 / 7;
+    private final int widthOfMainPanel = width;
+    private final int toolBarX = 0;
+    private final int toolBarY = heightOfTitleBar + heightOfMainPanel;
+    private final int heightOfToolBar = height - (heightOfMainPanel + heightOfTitleBar);
+    private final int widthOfToolBar = width;
 
-    public StartPage(){
+    public StartPage() {
         super();
 
         initialize();
 
         setTitle();
 
-        setMainPanel() ;
+        setMainPanel();
 
-        setToolBar() ;
+        setToolBar();
 
-        AddComponentsToFrame() ;
+        AddComponentsToFrame();
 
         setVisible(true);
     }
 
     private void setMainPanel() {
-        idField = new MyTextField("ID" , Constants.buttonJPGPath) ;
-        idField.setSize(width * 2 / 3 , height / 8 );
-        idField.setLocation(widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel/4 );
+        idField = new MyTextField("ID", Constants.buttonJPGPath);
+        idField.setSize(width * 2 / 3, height / 8);
+        idField.setLocation(widthOfMainPanel / 2 - idField.getWidth() / 2, mainPanelY + heightOfMainPanel / 4);
 
-        passwordField = new MyPasswordField("Password" , Constants.buttonJPGPath) ;
-        passwordField.setSize(width * 2 / 3 , height / 8 );
-        passwordField.setLocation(widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel/2 );
+        passwordField = new MyPasswordField("Password", Constants.buttonJPGPath);
+        passwordField.setSize(width * 2 / 3, height / 8);
+        passwordField.setLocation(widthOfMainPanel / 2 - idField.getWidth() / 2, mainPanelY + heightOfMainPanel / 2);
 
-        signInBtn = new MyButton("sign in" , Constants.buttonJPGPath) ;
-        signInBtn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
-        signInBtn.setLocation( widthOfMainPanel/2 - signInBtn.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
+        signInBtn = new MyButton("sign in", Constants.buttonJPGPath);
+        signInBtn.setSize(passwordField.getWidth() / 2, heightOfMainPanel / 5);
+        signInBtn.setLocation(widthOfMainPanel / 2 - signInBtn.getWidth() / 2, mainPanelY + heightOfMainPanel * 5 / 6);
+//        signInBtn.addActionListener(new ActionListener() {
+//            @Override
+//            public void actionPerformed(ActionEvent e) {
+//
+//                try {
+//                    Class.forName("oracle.jdbc.driver.OracleDriver");
+//                    Connection conn = DriverManager.getConnection(
+//                            "jdbc:oracle:thin:@db.yale.edu:1521:univdb" ,
+//                            "root" , ""
+//                    );
+//                }
+//                catch(ClassNotFoundException ex) {
+//                    System.out.println("Error: unable to load driver class!");
+//                    System.exit(1);
+//                } catch (SQLException e1) {
+//                    e1.printStackTrace();
+//                }
+//
+//
+//            }
+//        });
     }
 
-    private void initialize(){
-        GraphicHandler graphicHandler = GraphicHandler.getInstance() ;
+    private void initialize() {
+        GraphicHandler graphicHandler = GraphicHandler.getInstance();
 
         this.setSize(width, height);
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -102,7 +127,7 @@ public class StartPage extends JFrame {
     }
 
     private void setTitle() {
-        titleLbl = new MyLabel(Constants.appName, Constants.labelJPGPath , JLabel.CENTER);
+        titleLbl = new MyLabel(Constants.appName, Constants.labelJPGPath, JLabel.CENTER);
         titleLbl.setLocation(titleBarX, titleBarY);
         titleLbl.setSize(widthOfTitleBar, heightOfTitleBar);
         titleLbl.setForeground(Color.WHITE);
@@ -113,7 +138,7 @@ public class StartPage extends JFrame {
         JButton exit = new MyButton(Constants.exitJPGPath);
         exit.setLocation(0, 0);
         exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
-        exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)) );
+        exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)));
         exit.setBorder(BorderFactory.createEmptyBorder());
         //exit.setBackground(Color.decode("#01aaeb"));
         exit.setToolTipText("Exit");
@@ -127,7 +152,7 @@ public class StartPage extends JFrame {
         });
 
         toolBar = new JToolBar();
-        toolBar.setLocation(toolBarX,toolBarY);
+        toolBar.setLocation(toolBarX, toolBarY);
         toolBar.setSize(widthOfToolBar, heightOfToolBar);
         toolBar.setBorder(BorderFactory.createEmptyBorder());
         toolBar.setFloatable(false);
@@ -137,13 +162,14 @@ public class StartPage extends JFrame {
     private void AddComponentsToFrame() {
         getContentPane().add(titleLbl);
         getContentPane().add(toolBar);
-        getContentPane().add(idField) ;
-        getContentPane().add(passwordField) ;
-        getContentPane().add(signInBtn) ;
+        getContentPane().add(idField);
+        getContentPane().add(passwordField);
+        getContentPane().add(signInBtn);
     }
 
     /**
      * This method draws a blue image background of this frame
+     *
      * @param g
      */
     @Override
@@ -153,7 +179,7 @@ public class StartPage extends JFrame {
         Image image = new ImageIcon(getClass().getResource(Constants.blueBackJPGPath)).getImage();
         g.drawImage(image, 0, 0, width, height, null);
 
-        componentRepaint() ;
+        componentRepaint();
     }
 
     private void componentRepaint() {

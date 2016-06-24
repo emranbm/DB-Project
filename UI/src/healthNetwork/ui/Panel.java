@@ -76,9 +76,9 @@ public class Panel extends JFrame {
 
         sqlPane = new JTextPane();
         sqlPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
-        sqlPane.setLocation(0,0);
+        sqlPane.setLocation(0, 0);
 
-        JScrollPane scrollPane = new JScrollPane(sqlPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS , JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS) ;
+        JScrollPane scrollPane = new JScrollPane(sqlPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
         scrollPane.setLocation(widthOfSqlEditorPanel * 1 / 40, heightOfSqlEditorPanel * 1 / 40);
         sqlEditorPane.add(scrollPane);
@@ -187,11 +187,17 @@ public class Panel extends JFrame {
 
                     ResultSet lastRS = null;
 
-                    while (statement.getUpdateCount() != -1) {
-                        boolean tmp = statement.getMoreResults();
-                        hasResultSet = tmp || hasResultSet;
-                        if (tmp)
-                            lastRS = statement.getResultSet();
+                    if (!hasResultSet) {
+                        while (statement.getUpdateCount() != -1) {
+                            boolean tmp = statement.getMoreResults();
+                            hasResultSet = tmp || hasResultSet;
+                            if (tmp) {
+                                lastRS = statement.getResultSet();
+                                break;
+                            }
+                        }
+                    } else {
+                        lastRS = statement.getResultSet();
                     }
 
                     if (hasResultSet) {

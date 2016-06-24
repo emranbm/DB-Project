@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="Start page connects to database properly and works.">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$1.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$2.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$2.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$2.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" afterPath="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/ui/Panel.java" afterPath="$PROJECT_DIR$/src/healthNetwork/ui/Panel.java" />
     </list>
     <ignored path="UI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SqlHandler.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SqlHandler.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/SqlHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="146">
-              <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+            <state relative-caret-position="472">
+              <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#709#717#0" expanded="true" />
@@ -56,14 +52,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Panel.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/ui/Panel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+            <state relative-caret-position="-207">
+              <caret line="191" column="70" selection-start-line="191" selection-start-column="70" selection-end-line="191" selection-end-column="70" />
               <folding>
-                <element signature="e#4936#4937#0" expanded="true" />
-                <element signature="e#4977#4978#0" expanded="true" />
+                <element signature="e#5415#5416#0" expanded="true" />
+                <element signature="e#5456#5457#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -72,8 +68,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+            <state relative-caret-position="220">
+              <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#194#195#0" expanded="true" />
@@ -111,9 +107,9 @@
         <option value="$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/StartPage.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/Main.java" />
-        <option value="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/ui/Panel.java" />
+        <option value="$PROJECT_DIR$/src/healthNetwork/SqlHandler.java" />
       </list>
     </option>
   </component>
@@ -289,12 +285,6 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/Constants.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/Constants.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/ui/Panel.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -303,10 +293,7 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="CREATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$1.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/healthNetwork/ui/Panel$2.class</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/out/production/UI/images/execute.png</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/images/execute.png</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/healthNetwork/customView/MyErrorPane.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Deleted" />
@@ -856,7 +843,7 @@
       <workItem from="1466748986852" duration="941000" />
       <workItem from="1466750901157" duration="3000" />
       <workItem from="1466752377273" duration="7080000" />
-      <workItem from="1466768689734" duration="5821000" />
+      <workItem from="1466768689734" duration="7669000" />
     </task>
     <task id="LOCAL-00001" summary="sign up btn omits.">
       <created>1466761039841</created>
@@ -897,7 +884,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15510000" />
+    <option name="totallyTimeSpent" value="17358000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1178,18 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#226#227#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -1198,26 +1173,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/SqlHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        <state relative-caret-position="220">
+          <caret line="10" column="29" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#709#717#0" expanded="true" />
-            <element signature="e#987#1003#0" expanded="true" />
-            <element signature="e#1088#1096#0" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/ui/Panel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="174" column="45" selection-start-line="174" selection-start-column="45" selection-end-line="174" selection-end-column="45" />
+        <state relative-caret-position="-207">
+          <caret line="191" column="70" selection-start-line="191" selection-start-column="70" selection-end-line="191" selection-end-column="70" />
           <folding>
-            <element signature="e#4936#4937#0" expanded="true" />
-            <element signature="e#4977#4978#0" expanded="true" />
+            <element signature="e#5415#5416#0" expanded="true" />
+            <element signature="e#5456#5457#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/SqlHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="472">
+          <caret line="42" column="31" selection-start-line="42" selection-start-column="31" selection-end-line="42" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#709#717#0" expanded="true" />
+            <element signature="e#987#1003#0" expanded="true" />
+            <element signature="e#1088#1096#0" expanded="true" />
           </folding>
         </state>
       </provider>

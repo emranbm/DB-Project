@@ -175,19 +175,21 @@ public class Panel extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 JTextPane sqlPane = (JTextPane) sqlEditorPane.getComponent(0);
                 String query = sqlPane.getText();
+                MyErrorPane errorPane =  ((MyErrorPane)errorLog.getComponent(0));
                 try {
                     Statement statement = sqlConnection.createStatement();
+                    long t = System.currentTimeMillis();
                     ResultSet resultSet = statement.executeQuery(query);
-
+                    t = System.currentTimeMillis() - t;
                     JTable table = new JTable(SqlHandler.buildTableModel(resultSet));
                     customizeComponent(table);
                     JScrollPane scrollPane = new JScrollPane(table);
                     customizeComponent(scrollPane);
-                    outputArea.add(scrollPane);
-                    outputArea.repaint();
+                    addComponentToOutput(scrollPane);
+                    errorPane.append("query ok. in " + t + " milliseconds");
                 } catch (SQLException e) {
                     e.printStackTrace();
-                    JOptionPane.showMessageDialog(Panel.this, "Error in executing the query");
+                    errorPane.append("query failed: " + e.getMessage());
                 }
             }
 
@@ -195,6 +197,12 @@ public class Panel extends JFrame {
                 component.setVisible(true);
                 component.setSize(outputArea.getWidth() * 19 / 20,outputArea.getHeight() * 19 / 20);
                 component.setLocation(widthOfOutputArea / 40, heightOfOutputArea / 40);
+            }
+
+            private void addComponentToOutput(JComponent component){
+                outputArea.removeAll();
+                outputArea.add(component);
+                outputArea.repaint();
             }
         });
 

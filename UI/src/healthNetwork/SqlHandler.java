@@ -37,7 +37,10 @@ public class SqlHandler {
         while (resultSet.next()) {
             Vector<Object> vector = new Vector<Object>();
             for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-                vector.add(resultSet.getObject(columnIndex));
+                Object obj = resultSet.getObject(columnIndex);
+                if (obj == null)
+                    obj = "[null]";
+                vector.add(obj);
             }
             data.add(vector);
         }

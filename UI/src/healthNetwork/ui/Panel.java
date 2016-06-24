@@ -84,6 +84,17 @@ public class Panel extends JFrame {
         errorLog = new MyPanel(Constants.blueBackJPGPath) ;
         errorLog.setSize(widthOfErrorLog , heightOfErrorLog );
         errorLog.setLocation(errorLogX , errorLogY);
+
+        JTextPane errorPane = new JTextPane() ;
+        errorPane.setSize(this.getWidth() , this.getHeight() );
+        errorPane.setLocation( 0, 0);
+        errorPane.setEditable(false);
+
+        MyErrorPane scrollPane = new MyErrorPane( errorPane ) ;
+        scrollPane.setSize(widthOfErrorLog * 19 / 20 , heightOfErrorLog * 19 / 20 );
+        scrollPane.setLocation( widthOfErrorLog * 1 / 40 , heightOfErrorLog * 1 / 40);
+
+        errorLog.add(scrollPane) ;
     }
 
     private void initialize() {

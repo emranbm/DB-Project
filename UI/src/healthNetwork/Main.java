@@ -9,6 +9,6 @@ import healthNetwork.ui.StartPage;
 public class Main {
 
     public static void main( String[] args){
-        Panel startPage = new Panel() ;
+        new StartPage() ;
     }
 }

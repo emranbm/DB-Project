@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="A start to login process using jdbc">
+    <list default="true" id="2167a6be-2db3-426e-baa2-9ad3d9c84a81" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/Main.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/Main.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class" afterPath="$PROJECT_DIR$/out/production/UI/healthNetwork/ui/StartPage.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/Main.java" afterPath="$PROJECT_DIR$/src/healthNetwork/Main.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java" afterPath="$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java" />
     </list>
     <ignored path="UI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,88 +30,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="StartPage.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="296">
+              <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+              <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#194#195#0" expanded="true" />
-                <element signature="e#240#241#0" expanded="true" />
+                <element signature="e#226#227#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GraphicHandler.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyPasswordField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyPasswordField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyPanel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyPanel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyLabel.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyLabel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyTextField.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyTextField.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MyButton.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/customView/MyButton.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="839">
-              <caret line="57" column="34" selection-start-line="57" selection-start-column="34" selection-end-line="57" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Constants.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/healthNetwork/Constants.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="48" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -132,6 +75,7 @@
         <option value="$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/StartPage.java" />
         <option value="$PROJECT_DIR$/src/healthNetwork/Main.java" />
+        <option value="$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java" />
       </list>
     </option>
   </component>
@@ -227,6 +171,46 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="healthNetwork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="healthNetwork" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ui" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -838,7 +822,7 @@
       <workItem from="1466746991564" duration="1665000" />
       <workItem from="1466748986852" duration="941000" />
       <workItem from="1466750901157" duration="3000" />
-      <workItem from="1466752377273" duration="6506000" />
+      <workItem from="1466752377273" duration="6856000" />
     </task>
     <task id="LOCAL-00001" summary="sign up btn omits.">
       <created>1466761039841</created>
@@ -854,11 +838,18 @@
       <option name="project" value="LOCAL" />
       <updated>1466767378468</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="A start to login process using jdbc">
+      <created>1466767593790</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1466767593790</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9115000" />
+    <option name="totallyTimeSpent" value="9465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -923,7 +914,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1001,7 +992,7 @@
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1130,22 +1121,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#194#195#0" expanded="true" />
-            <element signature="e#240#241#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/healthNetwork/GraphicHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#194#195#0" expanded="true" />
+            <element signature="e#226#227#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/healthNetwork/ui/StartPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="102" column="37" selection-start-line="102" selection-start-column="37" selection-end-line="102" selection-end-column="37" />
           <folding />
         </state>
       </provider>

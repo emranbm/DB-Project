@@ -24,7 +24,6 @@ public class StartPage extends JFrame {
     private MyTextField idField;
     private JPasswordField passwordField ;
     private JButton signInBtn;
-    private JButton signUpBtn;
     private JToolBar toolBar ;
 
     /**
@@ -71,11 +70,7 @@ public class StartPage extends JFrame {
 
         signInBtn = new MyButton("sign in" , Constants.buttonJPGPath) ;
         signInBtn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
-        signInBtn.setLocation( widthOfMainPanel/2 - idField.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
-
-        signUpBtn = new MyButton("sign up" , Constants.buttonJPGPath) ;
-        signUpBtn.setSize( passwordField.getWidth()/2 , heightOfMainPanel / 5 );
-        signUpBtn.setLocation( widthOfMainPanel/2  , mainPanelY + heightOfMainPanel * 5/6 );
+        signInBtn.setLocation( widthOfMainPanel/2 - signInBtn.getWidth()/2 , mainPanelY + heightOfMainPanel * 5/6 );
     }
 
     private void initialize(){
@@ -145,7 +140,6 @@ public class StartPage extends JFrame {
         getContentPane().add(idField) ;
         getContentPane().add(passwordField) ;
         getContentPane().add(signInBtn) ;
-        getContentPane().add(signUpBtn) ;
     }
 
     /**
@@ -166,7 +160,6 @@ public class StartPage extends JFrame {
         titleLbl.repaint();
         toolBar.getComponent(0).repaint();
         signInBtn.repaint();
-        signUpBtn.repaint();
         idField.repaint();
         passwordField.repaint();
     }

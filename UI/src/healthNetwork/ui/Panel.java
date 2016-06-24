@@ -30,7 +30,7 @@ public class Panel extends JFrame {
     private MyPanel sqlEditorPane;
     private MyPanel outputArea;
     private MyPanel errorLog;
-
+    private JTextPane sqlPane;
     /**
      * Magnitude of imaginary layouts
      */
@@ -46,7 +46,7 @@ public class Panel extends JFrame {
     private final int widthOfOutputArea = width;
     private final int outputAreaX = 0;
     private final int outputAreaY = heightOfToolBar + heightOfSqlEditorPanel;
-    private final int heightOfErrorLog = height * 19 / 100 ;
+    private final int heightOfErrorLog = height * 19 / 100;
     private final int widthOfErrorLog = width;
     private final int errorLogX = 0;
     private final int errorLogY = heightOfToolBar + heightOfSqlEditorPanel + heightOfOutputArea;
@@ -62,46 +62,49 @@ public class Panel extends JFrame {
 
         setOutputArea();
 
-        setErrorLog() ;
+        setErrorLog();
 
         AddComponentsToFrame();
 
         setVisible(true);
     }
 
-    private void setSqlEditorPane(){
-        sqlEditorPane = new MyPanel(Constants.blueBackJPGPath) ;
-        sqlEditorPane.setSize(widthOfSqlEditorPanel , heightOfSqlEditorPanel);
-        sqlEditorPane.setLocation(sqlEditorPanelX , sqlEditorPanelY);
+    private void setSqlEditorPane() {
+        sqlEditorPane = new MyPanel(Constants.blueBackJPGPath);
+        sqlEditorPane.setSize(widthOfSqlEditorPanel, heightOfSqlEditorPanel);
+        sqlEditorPane.setLocation(sqlEditorPanelX, sqlEditorPanelY);
 
-        JTextPane sqleditor = new JTextPane() ;
-        sqleditor.setSize(widthOfSqlEditorPanel * 19 / 20 , heightOfSqlEditorPanel * 19 / 20 );
-        sqleditor.setLocation( widthOfSqlEditorPanel * 1 / 40 , heightOfSqlEditorPanel * 1 / 40);
+        sqlPane = new JTextPane();
+        sqlPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
+        sqlPane.setLocation(0,0);
 
-        sqlEditorPane.add(sqleditor) ;
+        JScrollPane scrollPane = new JScrollPane(sqlPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS , JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS) ;
+        scrollPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
+        scrollPane.setLocation(widthOfSqlEditorPanel * 1 / 40, heightOfSqlEditorPanel * 1 / 40);
+        sqlEditorPane.add(scrollPane);
     }
 
-    private void setOutputArea(){
-        outputArea = new MyPanel(Constants.blueBackJPGPath) ;
-        outputArea.setLocation(outputAreaX , outputAreaY);
-        outputArea.setSize(widthOfOutputArea , heightOfOutputArea);
+    private void setOutputArea() {
+        outputArea = new MyPanel(Constants.blueBackJPGPath);
+        outputArea.setLocation(outputAreaX, outputAreaY);
+        outputArea.setSize(widthOfOutputArea, heightOfOutputArea);
     }
 
-    private void setErrorLog(){
-        errorLog = new MyPanel(Constants.blueBackJPGPath) ;
-        errorLog.setSize(widthOfErrorLog , heightOfErrorLog );
-        errorLog.setLocation(errorLogX , errorLogY);
+    private void setErrorLog() {
+        errorLog = new MyPanel(Constants.blueBackJPGPath);
+        errorLog.setSize(widthOfErrorLog, heightOfErrorLog);
+        errorLog.setLocation(errorLogX, errorLogY);
 
-        JTextPane errorPane = new JTextPane() ;
-        errorPane.setSize(this.getWidth() , this.getHeight() );
-        errorPane.setLocation( 0, 0);
+        JTextPane errorPane = new JTextPane();
+        errorPane.setSize(this.getWidth(), this.getHeight());
+        errorPane.setLocation(0, 0);
         errorPane.setEditable(false);
 
-        MyErrorPane scrollPane = new MyErrorPane( errorPane ) ;
-        scrollPane.setSize(widthOfErrorLog * 19 / 20 , heightOfErrorLog * 19 / 20 );
-        scrollPane.setLocation( widthOfErrorLog * 1 / 40 , heightOfErrorLog * 1 / 40);
+        MyErrorPane scrollPane = new MyErrorPane(errorPane);
+        scrollPane.setSize(widthOfErrorLog * 19 / 20, heightOfErrorLog * 19 / 20);
+        scrollPane.setLocation(widthOfErrorLog * 1 / 40, heightOfErrorLog * 1 / 40);
 
-        errorLog.add(scrollPane) ;
+        errorLog.add(scrollPane);
     }
 
     private void initialize(Connection sqlConnection) {
@@ -136,12 +139,12 @@ public class Panel extends JFrame {
     }
 
     private void setToolBar() {
-        toolBar = new MyPanel(Constants.blueBackJPGPath) ;
-        toolBar.setLocation(toolBarX , toolBarY);
-        toolBar.setSize(widthOfToolBar , heightOfToolBar);
+        toolBar = new MyPanel(Constants.blueBackJPGPath);
+        toolBar.setLocation(toolBarX, toolBarY);
+        toolBar.setSize(widthOfToolBar, heightOfToolBar);
 
         JButton exit = new MyButton(Constants.exitJPGPath);
-        exit.setLocation(0,0);
+        exit.setLocation(0, 0);
         exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
         exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)));
         exit.setBorder(BorderFactory.createEmptyBorder());
@@ -156,14 +159,14 @@ public class Panel extends JFrame {
         });
 
         JToolBar bar = new JToolBar();
-        bar.setLocation(widthOfToolBar / 60, heightOfToolBar/5);
-        bar.setSize(exit.getWidth() * 2, exit.getHeight()*2);
+        bar.setLocation(widthOfToolBar / 60, heightOfToolBar / 5);
+        bar.setSize(exit.getWidth() * 2, exit.getHeight() * 2);
         bar.setBorder(BorderFactory.createEmptyBorder());
         bar.setFloatable(false);
         bar.add(exit);
 
         JButton exe = new MyButton();
-        exe.setLocation(0,0);
+        exe.setLocation(0, 0);
         exe.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
         exe.setIcon(new ImageIcon(getClass().getResource(Constants.executePNGPath)));
         exe.setBorder(BorderFactory.createEmptyBorder());
@@ -173,33 +176,46 @@ public class Panel extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                JTextPane sqlPane = (JTextPane) sqlEditorPane.getComponent(0);
                 String query = sqlPane.getText();
-                MyErrorPane errorPane =  ((MyErrorPane)errorLog.getComponent(0));
+                MyErrorPane errorPane = ((MyErrorPane) errorLog.getComponent(0));
                 try {
                     Statement statement = sqlConnection.createStatement();
                     long t = System.currentTimeMillis();
-                    ResultSet resultSet = statement.executeQuery(query);
+
+                    boolean hasResultSet = statement.execute(query);
                     t = System.currentTimeMillis() - t;
-                    JTable table = new JTable(SqlHandler.buildTableModel(resultSet));
-                    customizeComponent(table);
-                    JScrollPane scrollPane = new JScrollPane(table);
-                    customizeComponent(scrollPane);
-                    addComponentToOutput(scrollPane);
+
+                    ResultSet lastRS = null;
+
+                    while (statement.getUpdateCount() != -1) {
+                        boolean tmp = statement.getMoreResults();
+                        hasResultSet = tmp || hasResultSet;
+                        if (tmp)
+                            lastRS = statement.getResultSet();
+                    }
+
+                    if (hasResultSet) {
+                        ResultSet resultSet = lastRS;//statement.getResultSet();
+                        JTable table = new JTable(SqlHandler.buildTableModel(resultSet));
+                        customizeComponent(table);
+                        JScrollPane scrollPane = new JScrollPane(table);
+                        customizeComponent(scrollPane);
+                        addComponentToOutput(scrollPane);
+                    }
                     errorPane.append("query ok. in " + t + " milliseconds");
                 } catch (SQLException e) {
-                    e.printStackTrace();
+                    //e.printStackTrace();
                     errorPane.append("query failed: " + e.getMessage());
                 }
             }
 
             private void customizeComponent(JComponent component) {
                 component.setVisible(true);
-                component.setSize(outputArea.getWidth() * 19 / 20,outputArea.getHeight() * 19 / 20);
+                component.setSize(outputArea.getWidth() * 19 / 20, outputArea.getHeight() * 19 / 20);
                 component.setLocation(widthOfOutputArea / 40, heightOfOutputArea / 40);
             }
 
-            private void addComponentToOutput(JComponent component){
+            private void addComponentToOutput(JComponent component) {
                 outputArea.removeAll();
                 outputArea.add(component);
                 outputArea.repaint();
@@ -207,14 +223,14 @@ public class Panel extends JFrame {
         });
 
         JToolBar bar2 = new JToolBar();
-        bar2.setLocation(widthOfToolBar / 2, heightOfToolBar/5);
-        bar2.setSize(exe.getWidth() * 2, exe.getHeight()*2);
+        bar2.setLocation(widthOfToolBar / 2, heightOfToolBar / 5);
+        bar2.setSize(exe.getWidth() * 2, exe.getHeight() * 2);
         bar2.setBorder(BorderFactory.createEmptyBorder());
         bar2.setFloatable(false);
         bar2.add(exe);
 
-        toolBar.add(bar) ;
-        toolBar.add(bar2) ;
+        toolBar.add(bar);
+        toolBar.add(bar2);
     }
 
 //    private void setToolBar() {

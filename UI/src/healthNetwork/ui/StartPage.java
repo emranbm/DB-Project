@@ -83,16 +83,26 @@ public class StartPage extends JFrame {
                 try {
                     Class.forName("com.mysql.jdbc.Driver");
 
+                    String username = idField.getText();
                     String pass = null;
                     if (passwordField.getPassword() != null) {
                         pass = new String(passwordField.getPassword());
                         System.out.println(pass);
                     }
 
-                    Connection conn = DriverManager.getConnection(
-                            "jdbc:mysql://localhost/db_project",
-                            idField.getText() , pass
-                    );
+
+                    Connection conn;
+                    if("root".equals(username)) {
+                        conn = DriverManager.getConnection(
+                                "jdbc:mysql://localhost?allowMultiQueries=true",
+                                username, pass
+                        );
+                    }else{
+                        conn = DriverManager.getConnection(
+                                "jdbc:mysql://localhost/db_project",
+                                username, pass
+                        );
+                    }
 
                     StartPage.this.dispose();
                     new Panel(conn);

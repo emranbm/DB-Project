@@ -94,13 +94,8 @@ public class StartPage extends JFrame {
                             idField.getText() , pass
                     );
 
-                    setVisible(false);
-                    new Panel();
-
-//                    Statement statement = conn.createStatement();
-//                    ResultSet resultSet = statement.executeQuery("select * from job_distribution");
-//                    resultSet.next();
-//                    System.out.println(resultSet.getString("job"));
+                    StartPage.this.dispose();
+                    new Panel(conn);
                 }
                 catch(ClassNotFoundException ex) {
                     System.out.println("Error: unable to load driver class!");

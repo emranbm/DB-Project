@@ -2,12 +2,17 @@ package healthNetwork.ui;
 
 import healthNetwork.Constants;
 import healthNetwork.GraphicHandler;
+import healthNetwork.SqlHandler;
 import healthNetwork.customView.*;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 /**
  * This class shows start page for signing in or up! For this class supposed a imaginary layout rather than
@@ -16,13 +21,15 @@ import java.awt.event.ActionListener;
  */
 public class Panel extends JFrame {
 
+    private Connection sqlConnection;
+
     private int width = GraphicHandler.getInstance().getWidthScreen() * 3 / 4;
     private int height = GraphicHandler.getInstance().getHeightScreen() * 3 / 4;
 
-    private MyPanel toolBar ;
-    private MyPanel sqlEditorPane ;
-    private MyPanel outputArea ;
-    private MyPanel errorLog ;
+    private MyPanel toolBar;
+    private MyPanel sqlEditorPane;
+    private MyPanel outputArea;
+    private MyPanel errorLog;
 
     /**
      * Magnitude of imaginary layouts
@@ -39,15 +46,15 @@ public class Panel extends JFrame {
     private final int widthOfOutputArea = width;
     private final int outputAreaX = 0;
     private final int outputAreaY = heightOfToolBar + heightOfSqlEditorPanel;
-    private final int heightOfErrorLog = height * 19 / 100 ;
+    private final int heightOfErrorLog = height * 19 / 100;
     private final int widthOfErrorLog = width;
     private final int errorLogX = 0;
     private final int errorLogY = heightOfToolBar + heightOfSqlEditorPanel + heightOfOutputArea;
 
-    public Panel() {
+    public Panel(Connection sqlConnection) {
         super();
 
-        initialize();
+        initialize(sqlConnection);
 
         setToolBar();
 
@@ -55,38 +62,40 @@ public class Panel extends JFrame {
 
         setOutputArea();
 
-        setErrorLog() ;
+        setErrorLog();
 
         AddComponentsToFrame();
 
         setVisible(true);
     }
 
-    private void setSqlEditorPane(){
-        sqlEditorPane = new MyPanel(Constants.blueBackJPGPath) ;
-        sqlEditorPane.setSize(widthOfSqlEditorPanel , heightOfSqlEditorPanel);
-        sqlEditorPane.setLocation(sqlEditorPanelX , sqlEditorPanelY);
+    private void setSqlEditorPane() {
+        sqlEditorPane = new MyPanel(Constants.blueBackJPGPath);
+        sqlEditorPane.setSize(widthOfSqlEditorPanel, heightOfSqlEditorPanel);
+        sqlEditorPane.setLocation(sqlEditorPanelX, sqlEditorPanelY);
 
-        JTextPane sqleditor = new JTextPane() ;
-        sqleditor.setSize(widthOfSqlEditorPanel * 19 / 20 , heightOfSqlEditorPanel * 19 / 20 );
-        sqleditor.setLocation( widthOfSqlEditorPanel * 1 / 40 , heightOfSqlEditorPanel * 1 / 40);
+        JTextPane sqleditor = new JTextPane();
+        sqleditor.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
+        sqleditor.setLocation(widthOfSqlEditorPanel * 1 / 40, heightOfSqlEditorPanel * 1 / 40);
 
-        sqlEditorPane.add(sqleditor) ;
+        sqlEditorPane.add(sqleditor);
     }
 
-    private void setOutputArea(){
-        outputArea = new MyPanel(Constants.blueBackJPGPath) ;
-        outputArea.setLocation(outputAreaX , outputAreaY);
-        outputArea.setSize(widthOfOutputArea , heightOfOutputArea);
+    private void setOutputArea() {
+        outputArea = new MyPanel(Constants.blueBackJPGPath);
+        outputArea.setLocation(outputAreaX, outputAreaY);
+        outputArea.setSize(widthOfOutputArea, heightOfOutputArea);
     }
 
-    private void setErrorLog(){
-        errorLog = new MyPanel(Constants.blueBackJPGPath) ;
-        errorLog.setSize(widthOfErrorLog , heightOfErrorLog );
-        errorLog.setLocation(errorLogX , errorLogY);
+    private void setErrorLog() {
+        errorLog = new MyPanel(Constants.blueBackJPGPath);
+        errorLog.setSize(widthOfErrorLog, heightOfErrorLog);
+        errorLog.setLocation(errorLogX, errorLogY);
     }
 
-    private void initialize() {
+    private void initialize(Connection sqlConnection) {
+        this.sqlConnection = sqlConnection;
+
         GraphicHandler graphicHandler = GraphicHandler.getInstance();
 
         this.setSize(width, height);
@@ -116,12 +125,12 @@ public class Panel extends JFrame {
     }
 
     private void setToolBar() {
-        toolBar = new MyPanel(Constants.blueBackJPGPath) ;
-        toolBar.setLocation(toolBarX , toolBarY);
-        toolBar.setSize(widthOfToolBar , heightOfToolBar);
+        toolBar = new MyPanel(Constants.blueBackJPGPath);
+        toolBar.setLocation(toolBarX, toolBarY);
+        toolBar.setSize(widthOfToolBar, heightOfToolBar);
 
         JButton exit = new MyButton(Constants.exitJPGPath);
-        exit.setLocation(0,0);
+        exit.setLocation(0, 0);
         exit.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
         exit.setIcon(new ImageIcon(getClass().getResource(Constants.exitPNGPath)));
         exit.setBorder(BorderFactory.createEmptyBorder());
@@ -131,20 +140,19 @@ public class Panel extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                // TODO Auto-generated method stub
                 dispose();
             }
         });
 
         JToolBar bar = new JToolBar();
-        bar.setLocation(widthOfToolBar / 60, heightOfToolBar/5);
-        bar.setSize(exit.getWidth() * 2, exit.getHeight()*2);
+        bar.setLocation(widthOfToolBar / 60, heightOfToolBar / 5);
+        bar.setSize(exit.getWidth() * 2, exit.getHeight() * 2);
         bar.setBorder(BorderFactory.createEmptyBorder());
         bar.setFloatable(false);
         bar.add(exit);
 
         JButton exe = new MyButton();
-        exe.setLocation(0,0);
+        exe.setLocation(0, 0);
         exe.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
         exe.setIcon(new ImageIcon(getClass().getResource(Constants.executePNGPath)));
         exe.setBorder(BorderFactory.createEmptyBorder());
@@ -154,20 +162,40 @@ public class Panel extends JFrame {
 
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                // TODO Auto-generated method stub
-                dispose();
+                JTextPane sqlPane = (JTextPane) sqlEditorPane.getComponent(0);
+                String query = sqlPane.getText();
+                try {
+                    Statement statement = sqlConnection.createStatement();
+                    ResultSet resultSet = statement.executeQuery(query);
+
+                    JTable table = new JTable(SqlHandler.buildTableModel(resultSet));
+                    customizeComponent(table);
+                    JScrollPane scrollPane = new JScrollPane(table);
+                    customizeComponent(scrollPane);
+                    outputArea.add(scrollPane);
+                    outputArea.repaint();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                    JOptionPane.showMessageDialog(Panel.this, "Error in executing the query");
+                }
+            }
+
+            private void customizeComponent(JComponent component) {
+                component.setVisible(true);
+                component.setSize(outputArea.getWidth() * 19 / 20,outputArea.getHeight() * 19 / 20);
+                component.setLocation(widthOfOutputArea / 40, heightOfOutputArea / 40);
             }
         });
 
         JToolBar bar2 = new JToolBar();
-        bar2.setLocation(widthOfToolBar / 2, heightOfToolBar/5);
-        bar2.setSize(exe.getWidth() * 2, exe.getHeight()*2);
+        bar2.setLocation(widthOfToolBar / 2, heightOfToolBar / 5);
+        bar2.setSize(exe.getWidth() * 2, exe.getHeight() * 2);
         bar2.setBorder(BorderFactory.createEmptyBorder());
         bar2.setFloatable(false);
         bar2.add(exe);
 
-        toolBar.add(bar) ;
-        toolBar.add(bar2) ;
+        toolBar.add(bar);
+        toolBar.add(bar2);
     }
 
 //    private void setToolBar() {

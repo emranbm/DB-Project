@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="c3p0-0.9.1-pre6">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/c3p0-0.9.1-pre6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/jboss-common-jdbc-wrapper.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/slf4j-api-1.6.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/src/jboss-common-jdbc-wrapper-src.jar!/" />
+    </SOURCES>
+  </library>
+</component>

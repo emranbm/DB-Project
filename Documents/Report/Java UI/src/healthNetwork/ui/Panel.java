@@ -31,8 +31,6 @@ public class Panel extends JFrame {
     private MyPanel outputArea;
     private MyPanel errorLog;
     private JTextPane sqlPane;
-    private JTable table ;
-
     /**
      * Magnitude of imaginary layouts
      */
@@ -80,8 +78,7 @@ public class Panel extends JFrame {
         sqlPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
         sqlPane.setLocation(0, 0);
 
-        JScrollPane scrollPane = new JScrollPane(sqlPane, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-
+        JScrollPane scrollPane = new JScrollPane(sqlPane, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         scrollPane.setSize(widthOfSqlEditorPanel * 19 / 20, heightOfSqlEditorPanel * 19 / 20);
         scrollPane.setLocation(widthOfSqlEditorPanel * 1 / 40, heightOfSqlEditorPanel * 1 / 40);
         sqlEditorPane.add(scrollPane);
@@ -205,8 +202,7 @@ public class Panel extends JFrame {
 
                     if (hasResultSet) {
                         ResultSet resultSet = lastRS;//statement.getResultSet();
-                        table = null ;
-                        table = new JTable(SqlHandler.buildTableModel(resultSet));
+                        JTable table = new JTable(SqlHandler.buildTableModel(resultSet));
                         customizeComponent(table);
                         JScrollPane scrollPane = new JScrollPane(table);
                         customizeComponent(scrollPane);
@@ -239,36 +235,8 @@ public class Panel extends JFrame {
         bar2.setFloatable(false);
         bar2.add(exe);
 
-        JButton deleteSelectedRow = new MyButton();
-        deleteSelectedRow.setLocation(0, 0);
-        deleteSelectedRow.setSize(Constants.sizeOfExitButton, Constants.sizeOfExitButton);
-        deleteSelectedRow.setIcon(new ImageIcon(getClass().getResource(Constants.removePNGPath)));
-        deleteSelectedRow.setBorder(BorderFactory.createEmptyBorder());
-        deleteSelectedRow.setToolTipText("Delete selected row");
-        deleteSelectedRow.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if( outputArea.getComponentCount() == 0 ){
-                    JOptionPane.showMessageDialog(Panel.this,"No table selected!");
-                }else{
-                    for( int i = 0 ; i < table.getColumnCount() ; i++ ) {
-                        table.getValueAt(table.getSelectedRow(),i) ;
-                    }
-                }
-            }
-        });
-
-
-        JToolBar bar3 = new JToolBar();
-        bar3.setLocation(widthOfToolBar * 45 / 100, heightOfToolBar / 5);
-        bar3.setSize(exit.getWidth() * 2, exit.getHeight() * 2);
-        bar3.setBorder(BorderFactory.createEmptyBorder());
-        bar3.setFloatable(false);
-        bar3.add(deleteSelectedRow);
-
         toolBar.add(bar);
         toolBar.add(bar2);
-        toolBar.add(bar3) ;
     }
 
 //    private void setToolBar() {

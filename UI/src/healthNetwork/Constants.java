@@ -52,6 +52,10 @@ public abstract class Constants {
      */
     public static final String executePNGPath = "/images/execute.png" ;
     /**
+     * Path for remove.png
+     */
+    public static final String removePNGPath = "/images/remove.png" ;
+    /**
      * Path for blue background image
      */
     public static final String blueBackJPGPath = "/images/blue_back.jpg" ;

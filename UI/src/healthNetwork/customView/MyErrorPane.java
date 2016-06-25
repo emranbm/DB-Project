@@ -9,7 +9,7 @@ public class MyErrorPane extends JScrollPane {
 
     private JTextPane errorPane ;
     public MyErrorPane(JTextPane errorPane){
-        super(errorPane , JScrollPane.VERTICAL_SCROLLBAR_ALWAYS , JScrollPane.HORIZONTAL_SCROLLBAR_NEVER ) ;
+        super(errorPane , JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED , JScrollPane.HORIZONTAL_SCROLLBAR_NEVER ) ;
         this.errorPane = errorPane ;
     }
 
